@@ -1,0 +1,45 @@
+-# %h2 Log in
+-# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true
+-#   .field
+-#     = f.label :password
+-#     %br/
+-#     = f.password_field :password, autocomplete: "off"
+-#   - if devise_mapping.rememberable?
+-#     .field
+-#       = f.check_box :remember_me
+-#       = f.label :remember_me
+-#   .actions
+-#     = f.submit "Log in"
+-# = render "devise/shared/links"
+%body
+  .login_container
+    %form#login_form{:method => "get"}
+      %h1.login_heading
+        Login
+        %span
+          / / <a href="#" class="open_register_form">Forgot password</a>
+      .form-group
+        %label{:for => "login_username"} Username
+        %input#username.form-control.input-lg{:name => "username", :type => "text"}/
+      .form-group
+        %label{:for => "login_password"} Password
+        %input#password.form-control.input-lg{:name => "password", :type => "password"}/
+      .submit_section
+        %button#login.btn.btn-lg.btn-success.btn-block Continue
+      #login_result.login_result
+    %form#register_form{:name => "form1", :style => "display:none"}
+      %h1.login_heading
+        Forgot password
+        %span
+          \/
+          %a.open_login_form{:href => "#"} login
+      .form-group
+        %label{:for => "register_email"} Email
+        %input#register.form-control.input-lg{:name => "register", :type => "text"}/
+      .submit_section
+        %input#btnContactUs.btn.btn-lg.btn-success.btn-block{:name => "submit", :onclick => "forgotcheck()", :type => "button", :value => "Continue"}/
+      #forgot_result.forgot_result
