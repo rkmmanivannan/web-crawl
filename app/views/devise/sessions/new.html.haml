@@ -1,0 +1,15 @@
+.login_container
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    %h1.login_heading
+      Login
+      %span
+    .form-group
+      = f.label :email
+      = f.email_field :email, autofocus: true, :class => "form-control input-lg"
+    .form-group
+      = f.label :password
+      = f.password_field :password, autocomplete: "off", :class => "form-control input-lg"
+    .submit_section
+      = f.submit "Log in", :class => "btn btn-lg btn-success btn-block"
+    #login_result.login_result
+    = render "devise/shared/links"

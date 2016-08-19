@@ -35,6 +35,14 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 
+
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+
+gem 'haml'
+gem 'haml-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
